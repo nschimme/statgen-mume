@@ -6,7 +6,6 @@
   <Content type="html">
     <![CDATA[
      <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
-
     <!-- Introduction -->
     <div style="width:400px; padding:0px 10px; font-size:10px; display: block;">
       Due to popular demand another stat column has been added enabeling
@@ -40,7 +39,7 @@
     </div>
      
     <!--Stat Generator-->
-    <div style="width:500px; float:left; padding:10px 10px; font-size:10px; display: block;">
+    <div style="width:550px; float:left; padding:10px 10px; font-size:10px;">
       <form name=statForm>
         <table border=0 cellpadding=0 cellspacing=0 align= center>
           <tbody>
@@ -267,7 +266,7 @@
                 <tr>
                   <td bgcolor="#cccccc" align=center><p><font  size=1><b><br>
 			  Stat Requirements ripped from <a href="http://tabris23.tripod.com">Tabris</a><br>
-			  Extended JavaScript code added by <a href="http://sites.google.com/site/nschimme/">Jahara</a> <br>
+			  Extended JavaScript code added by <a href="http://sites.google.com/site/jaharamume/">Jahara</a> <br>
 			  Practice Percentage code by <a href="http://mandor.mine.nu">Mandor</a><br>
 			  (Original Percentage code done by <u>Frn</u>, and <a href="http://userweb.tsr.ru/%7Egray_//MUME.HTM">Gray</a></b></font><font  size=1>)<br>
                         <b>Original JavaScript credit is given to <a href="http://www.e.kth.se/esekt/org/vrak/mume/"> VrAK</a></b> <br>
@@ -281,7 +280,7 @@
 
 
 
-    <div style="float: left; display: inline;"><!-- added by frn -->
+    <div style="float: left;"><!-- added by frn -->
       <form name="frn">
         <table cellspacing="3" width="580" border="0" dwcopytype="CopyTableColumn">
           <tbody>
@@ -812,6 +811,7 @@
       <!-- Copyright (c)2002 Site Meter -->
       <!--WEBBOT bot="HTMLMarkup" Endspan -->
     </div>
+
     ]]>
   </Content>
 </Module>
