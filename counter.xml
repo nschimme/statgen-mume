@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Web Counter"
+	       title_url="http://sites.google.com/site/jaharamume/"
+	       author="Nils Schimmelmann">
+    <Locale lang="en" country="us" />
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[ 
+
+    <div align="right">
+      <script type="text/javascript" language="JavaScript">
+	var site="s12jahara"
+      </script>
+      <script type="text/javascript" language="JavaScript1.2" src="http://s12.sitemeter.com/js/counter.js?site=s12jahara">
+      </script>
+      <noscript>
+        <a href="http://s12.sitemeter.com/stats.asp?site=s12jahara"
+           target="_top">
+	  <img src="http://s12.sitemeter.com/meter.asp?site=s12jahara"
+	       alt="Site Meter" border=0>
+	  </a>
+	</noscript>
+	<!-- Copyright (c)2002 Site Meter -->
+	<!--WEBBOT bot="HTMLMarkup" Endspan -->
+      </div>
+      
+    ]]>
+  </Content>
+</Module>
