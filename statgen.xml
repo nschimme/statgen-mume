@@ -5,7 +5,6 @@
      height="1024" author="Nils Schimmelmann" description="A stat
      generator to help you create a character on the free role-playing
      game Multi Users in Middle Earth (MUME).">
-    <Locale lang="en" country="us" />
     <Require feature="dynamic-height"/>
   </ModulePrefs>
   <Content type="html">
