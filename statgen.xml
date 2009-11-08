@@ -6,9 +6,6 @@
   <Content type="html">
     <![CDATA[
      <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
-     <script type="text/javascript">
-       gadgets.util.registerOnLoadHandler(updateDisplay);
-     </script>
 
      <!-- Introduction -->
      <div style="width:400px; padding:0px 10px; font-size:10px;">
@@ -22,7 +19,7 @@
 	   Enter your stats using the
 	   <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif" width="12" height="12" align="TEXTTOP"/>
 	   and
-	   <img border=0 src="subtraction.gif" width="12" height="12" align="TEXTTOP"/>
+	   <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif" width="12" height="12" align="TEXTTOP"/>
 	   until you get the desired number
 	 </li>
 	 <li>

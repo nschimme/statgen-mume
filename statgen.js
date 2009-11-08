@@ -356,4 +356,7 @@ function addStatsToListT(column) {
 	   
 }
 
+// To initiate the Google Gadget
+gadgets.util.registerOnLoadHandler(updateDisplay);
+
 //////////////// NO MORE JAVASCRIPT!!! //////////////////////////-->
