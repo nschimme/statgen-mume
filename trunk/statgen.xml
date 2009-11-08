@@ -10,803 +10,816 @@
   <Content type="html">
     <![CDATA[ 
 
-<script type="text/javascript"
-src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
+    <script type="text/javascript"
+	    src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
 
-<!-- Introduction -->
-<div style="width:400px; padding:0px 10px; font-size:10px; clear: left;">
-Due to popular demand another stat column has been added enabeling
-people to compare two different sets of stats. This, together with the
-field <i>Reroll Calc</i>, makes it possible to see how you can change
-your stats after a Partial reroll.<p>
-<u>Stat data can be entered in a couple ways:</u></p>
-<ol>
-<li>
-Enter your stats using the
-<img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif" width="12" height="12" align="TEXTTOP">
-and
-<img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif" width="12" height="12" align="TEXTTOP">
-until you get the desired number
-</li>
-<li>
-Enter your stats by directly entering the figure into the text
-box
-</li>
-</ol>
-<p>
-To get your base stats from your character in MUME type:<strong> info
-%B</strong>
-</p>
-As always, you can save the stats of the column <i>Stat Generator</i>
-in the textarea below by pressing the button <i>Add to List</i>. This
-way you can continue with more simulations without forgetting the old
-ones.
-<p><i>Tip</i>: Hovering your cursor over a certain skill will reveal
-its required stats.</p>
-</div>
-     
-<!--Stat Generator-->
-<div style="width:550px; float:left; padding:10px 10px; font-size:10px;">
-<form name=statForm>
-<table border=0 cellpadding=0 cellspacing=0 align= center>
-<tbody>
-<tr>
-<td colspan=2></td>
-<td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><b>Stat Generator </b></td>
-<td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><b>Reroll Calc </b></td>
-<td></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=7><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor=#000000 rowspan=17><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td><b>MUME version</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=old_version>
-<option value="8" selected>VIII</option>
-</select>                  </td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=new_version>
-<option value="8" selected>VIII</option>
-</select>                  </td>
-<td bgcolor=#000000 rowspan=17><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Race</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=old_race onChange="changeRace(this.options[this.selectedIndex].value, 'old');">
-<option value="Man" selected>Man</option>
-<option value="Dunadan">Man (Dunadan)</option>
-<option value="Noldo">Elf (Noldorin)</option>
-<option value="Sinda">Elf (Sinda)</option>
-<option value="Silvan">Elf (Silvan)</option>
-<option value="Half-Elf">Half-Elf </option>
-<option value="Dwarf">Dwarf </option>
-<option value="Hobbit">Hobbit </option>
-<option value="Orc">Orc </option>
-<option value="Troll">Troll</option>
-<option value="BN">Black Numenorean</option>
-</select>                  </td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=new_race onChange="changeRace(this.options[this.selectedIndex].value, 'new');">
-<option value="Man" selected>Man</option>
-<option value="Dunadan">Man (Dunadan)</option>
-<option value="Noldo">Elf (Noldorin)</option>
-<option value="Sinda">Elf (Sinda)</option>
-<option value="Silvan">Elf (Silvan)</option>
-<option value="Half-Elf">Half-Elf </option>
-<option value="Dwarf">Dwarf </option>
-<option value="Hobbit">Hobbit </option>
-<option value="Orc">Orc </option>
-<option value="Troll">Troll</option>
-<option value="BN">Black Numenorean</option>
-</select>                  </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td><b>Age</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=old_age onChange="changeAge(this.options[this.selectedIndex].value, 'old');">
-<option value="0" selected>No age modifier</option>
-<option value="1">1st age</option>
-<option value="2">2nd age</option>
-<option value="3">3rd age</option>
-<option value="4">4th age</option>
-<option value="5">5th age</option>
-<option value="6">6th age</option>
-<option value="7">7th age</option>
-</select>
-<br>
-<input type=text name=oldAgeRange size=9 value="x1">                  </td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><select name=new_age onChange="changeAge(this.options[this.selectedIndex].value, 'new');">
-<option value="0" selected>No age modifier</option>
-<option value="1">1st age</option>
-<option value="2">2nd age</option>
-<option value="3">3rd age</option>
-<option value="4">4th age</option>
-<option value="5">5th age</option>
-<option value="6">6th age</option>
-<option value="7">7th age</option>
-</select>
-<br>
-<input type=text name=newAgeRange size=9 value="x1">                  </td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Str</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',1);" name=old_stat1 size=2>
-<a href="javascript:dec('old',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',1);" name=new_stat1 size=2>
-<a href="javascript:dec('new',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td><b>Int</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',2);" name=old_stat2 size=2>
-<a href="javascript:dec('old',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',2);" name=new_stat2 size=2>
-<a href="javascript:dec('new',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Wis</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',3);" name=old_stat3 size=2>
-<a href="javascript:dec('old',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',3);" name=new_stat3 size=2>
-<a href="javascript:dec('new',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td><b>Dex</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',4);" name=old_stat4 size=2>
-<a href="javascript:dec('old',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',4);" name=new_stat4 size=2>
-<a href="javascript:dec('new',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Con</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',5);" name=old_stat5 size=2>
-<a href="javascript:dec('old',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',5);" name=new_stat5 size=2>
-<a href="javascript:dec('new',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td><b>Wil</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',6);" name=old_stat6 size=2>
-<a href="javascript:dec('old',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',6);" name=new_stat6 size=2>
-<a href="javascript:dec('new',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Per</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('old',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('old',7);" name=old_stat7 size=2>
-<a href="javascript:dec('old',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><a href="javascript:inc('new',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"></a>
-<input onChange="alter('new',7);" name=new_stat7 size=2>
-<a href="javascript:dec('new',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"></a></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td><b>Pts left</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><input name=old_ptsleft size=3>                  </td>
-<td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle><input name=new_ptsleft size=3>                  </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td><b>Difference</b></td>
-<td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=middle colspan=3><input name=pts_difference size=4>                  </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td align="center" valign="middle"><b>Other</b></td>
-<td bgcolor=#000000 align="center" valign="middle" rowspan="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=center valign="middle"><input onClick="clearStats('old')" type=button value='Reset Stats' name=reset_stats>                  </td>
-<td bgcolor=#000000 align="center" valign="middle" rowspan="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td align=center valign="middle"><input onClick="copyStats()" type=button value='Copy from Left' name=button3>                  </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td align="center" valign="middle">&nbsp ;</td>
-<td align=center valign="middle"><input onClick="addStatsToListT('old')" type=button value='Add to List' name=button4>                  </td>
-<td align=center valign="middle"><input onClick="addStatsToListT('new')" type=button value='Add to List' name=button5>                  </td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-</tbody>
-</table>
-<p style="padding: 10px;"/>
-<table bgcolor="#000000" border=0 cellspacing=0 cellpadding=0 width=225 align="center">
-<tr>
-<td><table border=0 cellspacing=2 cellpadding=0 width=225>
-<tr>
-<td bgcolor="#cccccc"><table border=0 cellspacing=2 cellpadding=0 width=100%>
-<tr>
-<td bgcolor="#cccccc" align=center><b>Stat List</b></td>
-</tr>
-</table></td>
-</tr>
-<tr>
-<td bgcolor="#eeeeee"><table border=0 cellspacing=2 cellpadding=0 width=225 align="center">
-<tr>
-<td align="center"><textarea name=statListT rows=6 cols=62 readonly></textarea>
-<br>
-<input type=button value="Clear list" onClick="this.form.statListT.value=''" name=button2>                        </td>
-</tr>
-</table></td>
-</tr>
-<tr>
-<td bgcolor="#cccccc" align=center><p><font  size=1><b><br>
-Stat Requirements ripped from <a href="http://tabris23.tripod.com">Tabris</a><br>
-Extended JavaScript code added by <a href="http://sites.google.com/site/jaharamume/">Jahara</a> <br>
-Practice Percentage code by <a href="http://mandor.mine.nu">Mandor</a><br>
-(Original Percentage code done by <u>Frn</u>, and <a href="http://userweb.tsr.ru/%7Egray_//MUME.HTM">Gray</a></b></font><font  size=1>)<br>
-<b>Original JavaScript credit is given to <a href="http://www.e.kth.se/esekt/org/vrak/mume/"> VrAK</a></b> <br>
-</font></p></td>
-</tr>
-</table></td>
-</tr>
-</table>
-</form>
-</div>
-
-
-
-<div style="float: left;"><!-- added by frn -->
-<form name="frn">
-<table cellspacing="3" width="580" border="0" dwcopytype="CopyTableColumn">
-<tbody>
-<tr>
-<td valign="Top"><p align="center"><b>Practice % Table</b></p></td>
-<td valign="middle"><font color="#000000" face="verdana,arial" size="2">
-<select name=Percent onChange="selectGroup(this.options[this.selectedIndex].value);" size="2">
-<option value="oldTmpStats" selected="true">Stat Generator</option>
-<option value="newTmpStats">Reroll Calc</option>
-</select>
-</font></td>
-<td colspan="2"><font  size="1"><b>Info:</b> This table shows 
-the theoretical practice percentages a character would get 
-being a<i> pure class </i>and having max practices in that 
-skill at legend level</font></td>
-<!-- -->
-</tr>
-<tr>
-<td valign="top" align="center"><table cellspacing="0" cellpadding="0" border="0">
-<tbody>
-<tr>
-<td colspan="2"><b>Puke-mages</b></td>
-</tr>
-<tr>
-<td>HPs:</td>
-<td><input size="5" name="hps">                              </td>
-</tr>
-<tr>
-<td>Mana:</td>
-<td><input size="5" name="manap">                              </td>
-</tr>
-</tbody>
-</table>
-<br>
-<table border=0 cellpadding=0 cellspacing=0>
-<tbody>
-<tr>
-<td colspan=2 align="center"><b>Ranger</b></td>
-<td width="40"></td>
-<td width="2"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=4 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr>
-<td bgcolor=#000000 rowspan=27 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td width="108" bgcolor="#cccccc" align="center"><b title="PER INT"> Awareness</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="awareness">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" align="center"><b title="STR WIL">Climb</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="climb">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td width="108" align="center"><b title="DEX INT">First 
-Aid</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="first">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#eeeeee" width="108" align="center"><b title="WIS WIL">Leadership</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="leadership">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td width="108" align="center"><b title="DEX WIL">Ride</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="ride">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" align="center"><b title="DEX CON WIL">Swim</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="swim">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td width="108" align="center"><b title="PER INT">Track</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="track">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" align="center"><b title="STR WIL">Wilderness</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="wilderness">                                </td>
-<td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-</tbody>
-</table>
-<p> </p>
-<table border=0 cellpadding=0 cellspacing=0>
-<tbody>
-<tr>
-<td colspan=3 align="center"><b>Warrior</b></td>
-<td width="40"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 rowspan=12 width="2" align="center"></td>
-<td bgcolor=#000000 colspan=3 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor=#000000 width="2" rowspan="32"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="2" bgcolor="#000000" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor="#eeeeee" width="108" align="center"><b title="STR DEX WIL">Bash</b></td>
-<td bgcolor="#eeeeee" width="40"><input size="5" name="bash">                                </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td width="2" bgcolor="#000000" align="center"></td>
-<td width="108" align="center"><b title="STR DEX WIL">Cleaving</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="cleaving">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="STR CON WIL">Concussion</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="concussion">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="STR CON WIL">Smite</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="smite">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="CON WIL">Endurance</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="endurance">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Parry</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="parry">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="STR DEX WIL">Rescue</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="rescue">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Slashing</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="slashing">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="1" bgcolor="#000000" align="center"></td>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="STR DEX PER">Stabbing</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="stabbing">                                </td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=3 height="2"></td>
-</tr>
-</tbody>
-</table></td>
-<td valign="Top" align="center"><table cellspacing="0" cellpadding="0" border="0">
-<tbody>
-<tr>
-<td colspan="2"><b>BN-mages</b></td>
-</tr>
-<tr>
-<td>HPs:</td>
-<td><input size="5" name="hpsb">                              </td>
-</tr>
-<tr>
-<td>Mana:</td>
-<td><input size="5" name="manapb">                              </td>
-</tr>
-</tbody>
-</table>
-<br>
-<table border=0 cellpadding=0 cellspacing=0>
-<tbody>
-<tr>
-<td colspan=2 align="center"><b>Thief</b></td>
-<td width="40"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 rowspan=15 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor=#000000 colspan=2 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor=#000000 width="2" rowspan="35"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#eeeeee" width="108" align="center"><b title="DEX PER">Backstab</b></td>
-<td bgcolor="#eeeeee" width="40"><input size="5" name="backstab">                                </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td width="108" align="center"><b title="DEX PER">Dodge</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="dodge">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="DEX PER">Sneak</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="sneak">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Escape</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="escape">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="DEX PER">Steal</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="steal">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Hide</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="hide">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="DEX WIL">Attack</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="attack">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Missile</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="missile">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#eeeeee" align="center"><b title="DEX INT">Pick</b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="pick">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Piercing</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="piercing">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" align="center"><b title="PER INT">Search</b></td>
-<td width="40"><input size="5" name="search">                                </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX INT">Envenom</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="envenom">                                </td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=2><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-</tbody>
-</table></td>
-<td valign="Top"><table border=0 cellpadding=0 cellspacing=0>
-<tbody>
-<tr>
-<td></td>
-<td align=CENTER nowrap><b>Magic-User</b></td>
-<td width="40"></td>
-<td align=middle width="2"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=4><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr>
-<td bgcolor=#000000 rowspan=27 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor="#cccccc" width="109" align="center"><b title="PER INT WIS">Detect 
-Magic </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="detectmagic">                              </td>
-<td width="2" bgcolor="#000000" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#eeeeee" width="109" align="center"><b title="PER INT WIS">Burning 
-Hands </b></td>
-<td bgcolor=#eeeeee width="40"><input size="5" name="burninghands">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Shocking 
-Grasp </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="burninghands2">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="PER INT WIS">Detect 
-Invisibility </b></td>
-<td width="40"><input size="5" name="burninghands3">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Lightning 
-Bolt </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="lightningbolt">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="PER INT WIS">Colour 
-Spray </b></td>
-<td width="40"><input size="5" name="lightningbolt2">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Fireball</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="lightningbolt3">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="PER INT WIS">Identify</b></td>
-<td width="40"><input size="5" name="lightningbolt4">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Call 
-Lighting </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="calllightning">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIS WIL">Locate</b></td>
-<td width="40"><input size="5" name="locate">                              </td>
-<td bgcolor=#000000 width="2" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS WIL">Locate 
-Life </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="locate2">                              </td>
-<td align=left width="2" bgcolor="#000000"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIS WIL">Control 
-Weather </b></td>
-<td width="40"><input size="5" name="locate3">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Create 
-Light </b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="createlight">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIS">Armour</b></td>
-<td width="40"><input size="5" name="armour">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Shield</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="armour2">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIS">Store</b></td>
-<td width="40"><input size="5" name="armour3">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Quake</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="armour4">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIS">Enchant</b></td>
-<td width="40"><input size="5" name="enchant">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Shroud</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="shroud">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIL">Block 
-Door </b></td>
-<td width="40"><input size="5" name="blockdoor">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Teleport</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="teleport">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIL">Dispel 
-Magic </b></td>
-<td width="40"><input size="5" name="dispelmagic">                              </td>
-<td width="2" bgcolor="#000000" align="center"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Portal</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="dispelmagic2">                              </td>
-<td width="2" bgcolor="#000000"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td width="109" align="center"><b title="INT WIL">Charm</b></td>
-<td width="40"><input size="5" name="charm">                              </td>
-<td width="2" bgcolor="#000000"></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Sleep</b></td>
-<td width="40" bgcolor="#CCCCCC"><input size="5" name="charm2">                              </td>
-<td width="2" bgcolor="#000000"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-</tbody>
-</table></td>
-<td valign="Top" align="center"><table border=0 cellpadding=0 cellspacing=0>
-<tbody>
-<tr>
-<td></td>
-<td colspan="2" align="CENTER"><b>Cleric</b></td>
-<td width="40"></td>
-<td width="2"></td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr>
-<td bgcolor=#000000 rowspan=23 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor="#cccccc" align="center" colspan="2"><b title="INT WIS">Cure 
-Light </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="curelight">                              </td>
-<td bgcolor=#000000 width="2" rowspan="43" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS">Cure 
-Serious </b></td>
-<td width="40"><input size="5" name="cure">                              </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td align="center" colspan="2"><b title="INT WIS">Cure 
-Blindness </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="cure2">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS">Cure 
-Critic</b></td>
-<td width="40"><input size="5" name="cure3">                              </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Remove 
-Poison</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="cure4">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="WIS WIL">Remove 
-Curse </b></td>
-<td width="40"><input size="5" name="cure5">                              </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Heal</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="heal">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS">Strength</b></td>
-<td width="40"><input size="5" name="heal2">                              </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Sanctuary</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="sanctuary">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS">Create 
-Food</b></td>
-<td width="40"><input size="5" name="create">                              </td>
-</tr>
-<tr align=middle bgcolor=#cccccc>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Create 
-Water </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="create2">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS">BOB</b></td>
-<td width="40"><input size="5" name="bob">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Harm</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="bob2">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="INT WIS WIL">Bless</b></td>
-<td width="40"><input size="5" name="bless">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS WIL">Sense 
-Life </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="senselife">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="WIS WIL">Blindness</b></td>
-<td width="40"><input size="5" name="blindness">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Curse</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="removecurse">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="WIS WIL">Break 
-Door </b></td>
-<td width="40"><input size="5" name="removecurse2">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Dispel 
-Evil </b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="dispelevil">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="WIS WIL">Fear</b></td>
-<td width="40"><input size="5" name="fear">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Summon</b></td>
-<td bgcolor=#CCCCCC width="40"><input size="5" name="summon">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td align="center" colspan="2"><b title="WIS WIL">Transfer</b></td>
-<td width="40"><input size="5" name="transfer">                              </td>
-</tr>
-<tr align=middle bgcolor=#eeeeee>
-<td bgcolor="#CCCCCC" width="96" align="center"><b title="WIS WIL">Word 
-of Recall</b></td>
-<td bgcolor="#CCCCCC" width="2" align="center"></td>
-<td bgcolor="#CCCCCC" width="40"><input size="5" name="transfer2">                              </td>
-</tr>
-<tr>
-<td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-<td bgcolor=#000000 colspan=5 width="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2></td>
-</tr>
-</tbody>
-</table>
-<p> </p>
-<p> </p></td>
-</tr>
-</tbody>
-</table>
-</form>
-</div>
-<!-- MAIN PAGE END HERE -->
+    <!-- Introduction -->
+    <div style="width:400px; padding:0px 10px; font-size:10px; display:block;">
+      Due to popular demand another stat column has been added enabeling
+      people to compare two different sets of stats. This, together with the
+      field <i>Reroll Calc</i>, makes it possible to see how you can change
+      your stats after a Partial reroll.<p>
+	<u>Stat data can be entered in a couple ways:</u></p>
+      <ol>
+	<li>
+	  Enter your stats using the
+	  <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif" width="12" height="12" align="TEXTTOP"/>
+	  and
+	  <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif" width="12" height="12" align="TEXTTOP"/>
+	  until you get the desired number
+	</li>
+	<li>
+	  Enter your stats by directly entering the figure into the text
+	  box
+	</li>
+      </ol>
+      <p>
+	To get your base stats from your character in MUME type:<strong> info
+	  %B</strong>
+      </p>
+      As always, you can save the stats of the column <i>Stat Generator</i>
+      in the textarea below by pressing the button <i>Add to List</i>. This
+      way you can continue with more simulations without forgetting the old
+      ones.
+      <p><i>Tip</i>: Hovering your cursor over a certain skill will reveal
+	its required stats.</p>
+    </div>
+    
+    <!--Stat Generator-->
+    <div style="width:550px; float:left; padding:10px 10px; font-size:10px;">
+      <form name=statForm>
+        <table border=0 cellpadding=0 cellspacing=0 align= center>
+          <tbody>
+            <tr>
+              <td colspan=2></td>
+              <td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><b>Stat Generator </b></td>
+              <td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><b>Reroll Calc </b></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td bgcolor=#000000 colspan=7><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td bgcolor=#000000 rowspan=17><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td><b>MUME version</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=old_version>
+                  <option value="8" selected>VIII</option>
+              </select>                  </td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=new_version>
+                  <option value="8" selected>VIII</option>
+              </select>                  </td>
+              <td bgcolor=#000000 rowspan=17><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+            <tr>
+              <td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Race</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=old_race onChange="changeRace(this.options[this.selectedIndex].value, 'old');">
+                  <option value="Man" selected>Man</option>
+                  <option value="Dunadan">Man (Dunadan)</option>
+                  <option value="Noldo">Elf (Noldorin)</option>
+                  <option value="Sinda">Elf (Sinda)</option>
+                  <option value="Silvan">Elf (Silvan)</option>
+                  <option value="Half-Elf">Half-Elf </option>
+                  <option value="Dwarf">Dwarf </option>
+                  <option value="Hobbit">Hobbit </option>
+                  <option value="Orc">Orc </option>
+                  <option value="Troll">Troll</option>
+                  <option value="BN">Black Numenorean</option>
+              </select>                  </td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=new_race onChange="changeRace(this.options[this.selectedIndex].value, 'new');">
+                  <option value="Man" selected>Man</option>
+                  <option value="Dunadan">Man (Dunadan)</option>
+                  <option value="Noldo">Elf (Noldorin)</option>
+                  <option value="Sinda">Elf (Sinda)</option>
+                  <option value="Silvan">Elf (Silvan)</option>
+                  <option value="Half-Elf">Half-Elf </option>
+                  <option value="Dwarf">Dwarf </option>
+                  <option value="Hobbit">Hobbit </option>
+                  <option value="Orc">Orc </option>
+                  <option value="Troll">Troll</option>
+                  <option value="BN">Black Numenorean</option>
+              </select>                  </td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td><b>Age</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=old_age onChange="changeAge(this.options[this.selectedIndex].value, 'old');">
+                  <option value="0" selected>No age modifier</option>
+                  <option value="1">1st age</option>
+                  <option value="2">2nd age</option>
+                  <option value="3">3rd age</option>
+                  <option value="4">4th age</option>
+                  <option value="5">5th age</option>
+                  <option value="6">6th age</option>
+                  <option value="7">7th age</option>
+                </select>
+                <br/>
+		<input type=text name=oldAgeRange size=9 value="x1"/>
+	      </td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><select name=new_age onChange="changeAge(this.options[this.selectedIndex].value, 'new');">
+                  <option value="0" selected>No age modifier</option>
+                  <option value="1">1st age</option>
+                  <option value="2">2nd age</option>
+                  <option value="3">3rd age</option>
+                  <option value="4">4th age</option>
+                  <option value="5">5th age</option>
+                  <option value="6">6th age</option>
+                  <option value="7">7th age</option>
+                </select>
+                <br/>
+                <input type=text name=newAgeRange size=9 value="x1"/>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor=#000000 colspan=5>
+		<img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Str</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',1);" name=old_stat1 size=2/>
+                <a href="javascript:dec('old',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+	      <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+	      <td align=middle><a href="javascript:inc('new',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',1);" name=new_stat1 size=2/>
+                <a href="javascript:dec('new',1);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a>
+	      </td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td><b>Int</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',2);" name=old_stat2 size=2/>
+                <a href="javascript:dec('old',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',2);" name=new_stat2 size=2/>
+                <a href="javascript:dec('new',2);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Wis</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',3);" name=old_stat3 size=2/>
+                <a href="javascript:dec('old',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',3);" name=new_stat3 size=2/>
+                <a href="javascript:dec('new',3);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td><b>Dex</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',4);" name=old_stat4 size=2/>
+                <a href="javascript:dec('old',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',4);" name=new_stat4 size=2/>
+                <a href="javascript:dec('new',4);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Con</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',5);" name=old_stat5 size=2/>
+                <a href="javascript:dec('old',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',5);" name=new_stat5 size=2/>
+                <a href="javascript:dec('new',5);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td><b>Wil</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',6);" name=old_stat6 size=2/>
+                <a href="javascript:dec('old',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',6);" name=new_stat6 size=2/>
+                <a href="javascript:dec('new',6);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Per</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('old',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('old',7);" name=old_stat7 size=2/>
+                <a href="javascript:dec('old',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><a href="javascript:inc('new',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif"/></a>
+                <input onChange="alter('new',7);" name=new_stat7 size=2/>
+                <a href="javascript:dec('new',7);"><img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif"/></a></td>
+            </tr>
+            <tr>
+              <td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td><b>Pts left</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><input name=old_ptsleft size=3/>                  </td>
+              <td><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle><input name=new_ptsleft size=3/>                  </td>
+            </tr>
+            <tr align=middle bgcolor=#eeeeee>
+              <td><b>Difference</b></td>
+              <td bgcolor=#000000><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=middle colspan=3><input name=pts_difference size=4/>                  </td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td align="center" valign="middle"><b>Other</b></td>
+              <td bgcolor=#000000 align="center" valign="middle" rowspan="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=center valign="middle"><input onClick="clearStats('old')" type=button value='Reset Stats' name=reset_stats/>
+              </td>
+              <td bgcolor=#000000 align="center" valign="middle" rowspan="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td align=center valign="middle"><input onClick="copyStats()" type=button value='Copy from Left' name=button3/>
+              </td>
+            </tr>
+            <tr align=middle bgcolor=#cccccc>
+              <td align="center" valign="middle">&nbsp;</td>
+              <td align=center valign="middle"><input onClick="addStatsToListT('old')" type=button value='Add to List' name=button4/>
+	      </td>
+              <td align=center valign="middle"><input onClick="addStatsToListT('new')" type=button value='Add to List' name=button5/>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+              <td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+            </tr>
+          </tbody>
+        </table>
+	
+	
+	<p style="padding: 10px;"/>
+	
+        <table bgcolor="#000000" border=0 cellspacing=0 cellpadding=0 width=225 align="center">
+          <tr>
+            <td><table border=0 cellspacing=2 cellpadding=0 width=225>
+                <tr>
+                  <td bgcolor="#cccccc"><table border=0 cellspacing=2 cellpadding=0 width=100%>
+		      <tr>
+                        <td bgcolor="#cccccc" align=center><b>Stat List</b></td>
+		      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td bgcolor="#eeeeee"><table border=0 cellspacing=2 cellpadding=0 width=225 align="center">
+		      <tr>
+                        <td align="center"><textarea name=statListT rows=6 cols=62 readonly></textarea>
+                          <br/>
+                          <input type=button value="Clear list" onClick="this.form.statListT.value=''" name=button2/>
+                        </td>
+		      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td bgcolor="#cccccc" align=center>
+		    <br/><font size=1><b>
+		      Stat Requirements <a href="http://tabris23.tripod.com">Tabris</a><br/>
+		      Extended JavaScript code added by <a href="http://sites.google.com/site/jaharamume/">Jahara</a><br/>
+		      Practice Percentage code by <a href="http://mandor.mine.nu">Mandor</a><br/>
+		      (Original Percentage code done <u>Frn</u>, and
+		      <a href="http://userweb.tsr.ru/%7Egray_//MUME.HTM">Gray</a></b>)<br/>
+		    <b>Original JavaScript credit is given to <a href="http://www.e.kth.se/esekt/org/vrak/mume/"> VrAK</a></b></font>
+		  </td>
+		</tr>
+            </table></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    
+    
+    <div style="float:left; font-size:10px;"><!-- added by frn -->
+      <form name="frn">
+        <table cellspacing="3" width="580" border="0" dwcopytype="CopyTableColumn">
+          <tbody>
+            <tr>
+              <td valign="Top"><p align="center"><b>Practice % Table</b></p></td>
+              <td valign="middle"><font color="#000000" face="verdana,arial" size="2">
+                  <select name=Percent onChange="selectGroup(this.options[this.selectedIndex].value);" size="2">
+                    <option value="oldTmpStats" selected="true">Stat Generator</option>
+                    <option value="newTmpStats">Reroll Calc</option>
+                  </select>
+              </font></td>
+              <td colspan="2"><font  size="1"><b>Info:</b> This table shows 
+                  the theoretical practice percentages a character would get 
+                  being a<i> pure class </i>and having max practices in that 
+                  skill at legend level</font></td>
+              <!-- -->
+            </tr>
+            <tr>
+              <td valign="top" align="center"><table cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td colspan="2"><b>Puke-mages</b></td>
+                    </tr>
+                    <tr>
+                      <td>HPs:</td>
+                      <td><input size="5" name="hps"/>                              </td>
+                    </tr>
+                    <tr>
+                      <td>Mana:</td>
+                      <td><input size="5" name="manap"/>                              </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <table border=0 cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td colspan=2 align="center"><b>Ranger</b></td>
+                      <td width="40"></td>
+                      <td width="2"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=4 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 rowspan=27 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td width="108" bgcolor="#cccccc" align="center"><b title="PER INT"> Awareness</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="awareness"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" align="center"><b title="STR WIL">Climb</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="climb"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td width="108" align="center"><b title="DEX INT">First 
+                          Aid</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="first"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#eeeeee" width="108" align="center"><b title="WIS WIL">Leadership</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="leadership"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td width="108" align="center"><b title="DEX WIL">Ride</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="ride"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" align="center"><b title="DEX CON WIL">Swim</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="swim"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td width="108" align="center"><b title="PER INT">Track</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="track"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" align="center"><b title="STR WIL">Wilderness</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="wilderness"/>                                </td>
+                      <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p> </p>
+                <table border=0 cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td colspan=3 align="center"><b>Warrior</b></td>
+                      <td width="40"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 rowspan=12 width="2" align="center"></td>
+                      <td bgcolor=#000000 colspan=3 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor=#000000 width="2" rowspan="32"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="2" bgcolor="#000000" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor="#eeeeee" width="108" align="center"><b title="STR DEX WIL">Bash</b></td>
+                      <td bgcolor="#eeeeee" width="40"><input size="5" name="bash"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                      <td width="108" align="center"><b title="STR DEX WIL">Cleaving</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="cleaving"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="STR CON WIL">Concussion</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="concussion"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="STR CON WIL">Smite</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="smite"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="CON WIL">Endurance</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="endurance"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Parry</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="parry"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="STR DEX WIL">Rescue</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="rescue"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Slashing</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="slashing"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="1" bgcolor="#000000" align="center"></td>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="STR DEX PER">Stabbing</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="stabbing"/>                                </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=3 height="2"></td>
+                    </tr>
+                  </tbody>
+              </table></td>
+              <td valign="Top" align="center"><table cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td colspan="2"><b>BN-mages</b></td>
+                    </tr>
+                    <tr>
+                      <td>HPs:</td>
+                      <td><input size="5" name="hpsb"/>                              </td>
+                    </tr>
+                    <tr>
+                      <td>Mana:</td>
+                      <td><input size="5" name="manapb"/>                              </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <table border=0 cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td colspan=2 align="center"><b>Thief</b></td>
+                      <td width="40"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 rowspan=15 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor=#000000 colspan=2 align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor=#000000 width="2" rowspan="35"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#eeeeee" width="108" align="center"><b title="DEX PER">Backstab</b></td>
+                      <td bgcolor="#eeeeee" width="40"><input size="5" name="backstab"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td width="108" align="center"><b title="DEX PER">Dodge</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="dodge"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="DEX PER">Sneak</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="sneak"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Escape</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="escape"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="DEX PER">Steal</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="steal"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Hide</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="hide"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="DEX WIL">Attack</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="attack"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX PER">Missile</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="missile"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#eeeeee" align="center"><b title="DEX INT">Pick</b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="pick"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="STR DEX PER">Piercing</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="piercing"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" align="center"><b title="PER INT">Search</b></td>
+                      <td width="40"><input size="5" name="search"/>                                </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="108" bgcolor="#CCCCCC" align="center"><b title="DEX INT">Envenom</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="envenom"/>                                </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=2><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                  </tbody>
+              </table></td>
+              <td valign="Top"><table border=0 cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td align=CENTER nowrap><b>Magic-User</b></td>
+                      <td width="40"></td>
+                      <td align=middle width="2"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=4><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 rowspan=27 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor="#cccccc" width="109" align="center"><b title="PER INT WIS">Detect 
+                          Magic </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="detectmagic"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#eeeeee" width="109" align="center"><b title="PER INT WIS">Burning 
+                          Hands </b></td>
+                      <td bgcolor=#eeeeee width="40"><input size="5" name="burninghands"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Shocking 
+                          Grasp </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="burninghands2"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="PER INT WIS">Detect 
+                          Invisibility </b></td>
+                      <td width="40"><input size="5" name="burninghands3"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Lightning 
+                          Bolt </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="lightningbolt"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="PER INT WIS">Colour 
+                          Spray </b></td>
+                      <td width="40"><input size="5" name="lightningbolt2"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Fireball</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="lightningbolt3"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="PER INT WIS">Identify</b></td>
+                      <td width="40"><input size="5" name="lightningbolt4"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Call 
+                          Lighting </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="calllightning"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIS WIL">Locate</b></td>
+                      <td width="40"><input size="5" name="locate"/>                              </td>
+                      <td bgcolor=#000000 width="2" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS WIL">Locate 
+                          Life </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="locate2"/>                              </td>
+                      <td align=left width="2" bgcolor="#000000"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIS WIL">Control 
+                          Weather </b></td>
+                      <td width="40"><input size="5" name="locate3"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Create 
+                          Light </b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="createlight"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIS">Armour</b></td>
+                      <td width="40"><input size="5" name="armour"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Shield</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="armour2"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIS">Store</b></td>
+                      <td width="40"><input size="5" name="armour3"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Quake</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="armour4"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIS">Enchant</b></td>
+                      <td width="40"><input size="5" name="enchant"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Shroud</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="shroud"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIL">Block 
+                          Door </b></td>
+                      <td width="40"><input size="5" name="blockdoor"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Teleport</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="teleport"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIL">Dispel 
+                          Magic </b></td>
+                      <td width="40"><input size="5" name="dispelmagic"/>                              </td>
+                      <td width="2" bgcolor="#000000" align="center"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Portal</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="dispelmagic2"/>                              </td>
+                      <td width="2" bgcolor="#000000"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td width="109" align="center"><b title="INT WIL">Charm</b></td>
+                      <td width="40"><input size="5" name="charm"/>                              </td>
+                      <td width="2" bgcolor="#000000"></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIL">Sleep</b></td>
+                      <td width="40" bgcolor="#CCCCCC"><input size="5" name="charm2"/>                              </td>
+                      <td width="2" bgcolor="#000000"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                  </tbody>
+              </table></td>
+              <td valign="Top" align="center"><table border=0 cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td colspan="2" align="CENTER"><b>Cleric</b></td>
+                      <td width="40"></td>
+                      <td width="2"></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=5><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 rowspan=23 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor="#cccccc" align="center" colspan="2"><b title="INT WIS">Cure 
+                          Light </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="curelight"/>                              </td>
+                      <td bgcolor=#000000 width="2" rowspan="43" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                          Serious </b></td>
+                      <td width="40"><input size="5" name="cure"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                          Blindness </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="cure2"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                          Critic</b></td>
+                      <td width="40"><input size="5" name="cure3"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Remove 
+                          Poison</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="cure4"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="WIS WIL">Remove 
+                          Curse </b></td>
+                      <td width="40"><input size="5" name="cure5"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Heal</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="heal"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS">Strength</b></td>
+                      <td width="40"><input size="5" name="heal2"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Sanctuary</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="sanctuary"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS">Create 
+                          Food</b></td>
+                      <td width="40"><input size="5" name="create"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#cccccc>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Create 
+                          Water </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="create2"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS">BOB</b></td>
+                      <td width="40"><input size="5" name="bob"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Harm</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="bob2"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="INT WIS WIL">Bless</b></td>
+                      <td width="40"><input size="5" name="bless"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS WIL">Sense 
+                          Life </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="senselife"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="WIS WIL">Blindness</b></td>
+                      <td width="40"><input size="5" name="blindness"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Curse</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="removecurse"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="WIS WIL">Break 
+                          Door </b></td>
+                      <td width="40"><input size="5" name="removecurse2"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Dispel 
+                          Evil </b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="dispelevil"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="WIS WIL">Fear</b></td>
+                      <td width="40"><input size="5" name="fear"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Summon</b></td>
+                      <td bgcolor=#CCCCCC width="40"><input size="5" name="summon"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td align="center" colspan="2"><b title="WIS WIL">Transfer</b></td>
+                      <td width="40"><input size="5" name="transfer"/>                              </td>
+                    </tr>
+                    <tr align=middle bgcolor=#eeeeee>
+                      <td bgcolor="#CCCCCC" width="96" align="center"><b title="WIS WIL">Word 
+                          of Recall</b></td>
+                      <td bgcolor="#CCCCCC" width="2" align="center"></td>
+                      <td bgcolor="#CCCCCC" width="40"><input size="5" name="transfer2"/>                              </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=#000000 colspan=3><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                      <td bgcolor=#000000 colspan=5 width="2"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p> </p>
+                <p> </p></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <!-- MAIN PAGE END HERE -->
 
     ]]>
   </Content>
