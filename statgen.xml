@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="MUME Stat Generator"
-     height="1024"
-     author="Nils Schimmelmann"/> 
+  <ModulePrefs title="Jahara's MUME Stat Generator"
+     title_url="http://sites.google.com/site/jaharamume/"
+     height="1024" author="Nils Schimmelmann" description="A stat
+     generator to help you create a character on the free role-playing
+     game Multi Users in Middle Earth (MUME).">
+    <Locale lang="en" country="us" />
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
   <Content type="html">
-    <![CDATA[
+    <![CDATA[ 
+
+    <script type="text/javascript"
+	    src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
 
     <!-- Introduction -->
     <div style="width:400px; padding:0px 10px; font-size:10px; display: block;">
@@ -288,7 +296,7 @@
               <td valign="Top"><p align="center"><b>Practice % Table</b></p></td>
               <td valign="middle"><font color="#000000" face="verdana,arial" size="2">
                   <select name=Percent onChange="selectGroup(this.options[this.selectedIndex].value);" size="2">
-                    <option value="oldTmpStats">Stat Generator</option>
+                    <option value="oldTmpStats" selected="true">Stat Generator</option>
                     <option value="newTmpStats">Reroll Calc</option>
                   </select>
               </font></td>
@@ -801,14 +809,15 @@
     </div>
     <!-- MAIN PAGE END HERE -->
 
-     <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
-
     <div align="right">
-      <script type="text/javascript" language="JavaScript">var site="s12jahara"</script>
+      <script type="text/javascript" language="JavaScript">var
+      site="s12jahara"</script>
       <script type="text/javascript" language="JavaScript1.2" src="http://s12.sitemeter.com/js/counter.js?site=s12jahara">
       </script>
       <noscript>
-        <a href="http://s12.sitemeter.com/stats.asp?site=s12jahara" target="_top"> <img src="http://s12.sitemeter.com/meter.asp?site=s12jahara" alt="Site Meter" border=0></a>
+        <a href="http://s12.sitemeter.com/stats.asp?site=s12jahara"
+        target="_top"> <img src="http://s12.sitemeter.com/meter.asp?site=s12jahara"
+        alt="Site Meter" border=0></a>
       </noscript>
       <!-- Copyright (c)2002 Site Meter -->
       <!--WEBBOT bot="HTMLMarkup" Endspan -->
