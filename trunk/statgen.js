@@ -10,7 +10,7 @@
      - 5/27/2002 Added Stat List     
 
 */
-<!--//////////////// VARIABLES AFTER THIS LINE ////////////////////
+//////////////// VARIABLES AFTER THIS LINE ////////////////////
 var MUMEVERSION      = 8;
 var maxPoints        = 175;
 var oldPointsLeft    = 175;
@@ -37,7 +37,7 @@ var ageBrackets      = new Array(0, 18, 24, 32, 40, 50, 65, 90);
 var partialReroll    = false;
 var currentSelect    = "oldTmpStats";
 
-//////////////// SUBRUTINES AFTER THIS LINE ////////////////////-->
+//////////////// SUBRUTINES AFTER THIS LINE ////////////////////
 
 function copyStats() {
     for (var i = 1; i <= newTmpStats.length; i++) {
@@ -356,7 +356,8 @@ function addStatsToListT(column) {
 	   
 }
 
-// To initiate the Google Gadget
+// For google gadget loading
 gadgets.util.registerOnLoadHandler(updateDisplay);
+
 
 //////////////// NO MORE JAVASCRIPT!!! //////////////////////////-->
