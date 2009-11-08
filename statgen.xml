@@ -7,40 +7,40 @@
     <![CDATA[
      <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
      <script type="text/javascript">
-       gadgets.util.registerOnLoadHandler(updateDisplay);
+       //gadgets.util.registerOnLoadHandler(updateDisplay);
      </script>
 
-     <!-- Introduction -->
-     <div style="width:400px; padding:0px 10px; font-size:10px;">
-       Due to popular demand another stat column has been added
-       enabeling people to compare two different sets of stats. This,
-       together with the field <i>Reroll Calc</i>, makes it possible
-       to see how you can change your stats after a Partial reroll.<p>
-	 <u>Stat data can be entered in a couple ways:</u></p>
-       <ol>
-	 <li>
-	   Enter your stats using the
-	   <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif" width="12" height="12" align="TEXTTOP"/>
-	   and
-	   <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif" width="12" height="12" align="TEXTTOP"/>
-	   until you get the desired number
-	 </li>
-	 <li>
-	   Enter your stats by directly entering the figure into the text
-	   box
-	 </li>
-       </ol>
-       <p>
-	 To get your base stats from your character in MUME type:<strong> info
-	   %B</strong>
-       </p>
-       As always, you can save the stats of the column <i>Stat</i> in
-       the textarea below by pressing the button <i>Add to
-       List</i>. This way you can continue with more simulations
-       without forgetting the old ones.
-       <p><i>Tip</i>: Hovering your cursor over a certain skill will
-	 reveal its required stats.</p>
-     </div>
+    <!-- Introduction -->
+    <div style="width:400px; padding:0px 10px; font-size:10px;">
+      Due to popular demand another stat column has been added enabeling
+      people to compare two different sets of stats. This, together with the
+      field <i>Reroll Calc</i>, makes it possible to see how you can change
+      your stats after a Partial reroll.<p>
+	<u>Stat data can be entered in a couple ways:</u></p>
+      <ol>
+	<li>
+	  Enter your stats using the
+	  <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/addition.gif" width="12" height="12" align="TEXTTOP">
+	  and
+	  <img border=0 src="http://statgen-mume.googlecode.com/svn/trunk/subtraction.gif" width="12" height="12" align="TEXTTOP">
+	  until you get the desired number
+	</li>
+	<li>
+	  Enter your stats by directly entering the figure into the text
+	  box
+	</li>
+      </ol>
+      <p>
+	To get your base stats from your character in MUME type:<strong> info
+	  %B</strong>
+      </p>
+      As always, you can save the stats of the column <i>Stat Generator</i>
+      in the textarea below by pressing the button <i>Add to List</i>. This
+      way you can continue with more simulations without forgetting the old
+      ones.
+      <p><i>Tip</i>: Hovering your cursor over a certain skill will reveal
+	its required stats.</p>
+    </div>
      
     <!--Stat Generator-->
     <div style="width:500px; float:left; padding:10px 10px; font-size:10px;">
