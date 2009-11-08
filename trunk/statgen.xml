@@ -6,6 +6,9 @@
   <Content type="html">
     <![CDATA[
      <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
+     <script type="text/javascript">
+       gadgets.util.registerOnLoadHandler(updateDisplay);
+     </script>
 
      <!-- Introduction -->
      <div style="width:400px; padding:0px 10px; font-size:10px;">
