@@ -6,12 +6,9 @@
   <Content type="html">
     <![CDATA[
      <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
-     <script type="text/javascript">
-       //gadgets.util.registerOnLoadHandler(updateDisplay);
-     </script>
 
     <!-- Introduction -->
-    <div style="width:400px; padding:0px 10px; font-size:10px;">
+    <div style="width:400px; padding:0px 10px; font-size:10px; display: block;">
       Due to popular demand another stat column has been added enabeling
       people to compare two different sets of stats. This, together with the
       field <i>Reroll Calc</i>, makes it possible to see how you can change
@@ -43,7 +40,7 @@
     </div>
      
     <!--Stat Generator-->
-    <div style="width:500px; float:left; padding:10px 10px; font-size:10px;">
+    <div style="width:500px; float:left; padding:10px 10px; font-size:10px; display: block;">
       <form name=statForm>
         <table border=0 cellpadding=0 cellspacing=0 align= center>
           <tbody>
@@ -284,7 +281,7 @@
 
 
 
-    <div style=""><!-- added by frn -->
+    <div style="float: left; display: inline;"><!-- added by frn -->
       <form name="frn">
         <table cellspacing="3" width="580" border="0" dwcopytype="CopyTableColumn">
           <tbody>
@@ -804,6 +801,17 @@
       </form>
     </div>
     <!-- MAIN PAGE END HERE -->
+
+    <div align="right">
+      <script type="text/javascript" language="JavaScript">var site="s12jahara"</script>
+      <script type="text/javascript" language="JavaScript1.2" src="http://s12.sitemeter.com/js/counter.js?site=s12jahara">
+      </script>
+      <noscript>
+        <a href="http://s12.sitemeter.com/stats.asp?site=s12jahara" target="_top"> <img src="http://s12.sitemeter.com/meter.asp?site=s12jahara" alt="Site Meter" border=0></a>
+      </noscript>
+      <!-- Copyright (c)2002 Site Meter -->
+      <!--WEBBOT bot="HTMLMarkup" Endspan -->
+    </div>
     ]]>
   </Content>
 </Module>
