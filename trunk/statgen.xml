@@ -2,23 +2,23 @@
 <Module>
   <ModulePrefs title="Jahara's MUME Stat Generator"
      title_url="http://sites.google.com/site/jaharamume/"
-     height="1024" author="Nils Schimmelmann" description="A stat
+     height="1000" author="Nils Schimmelmann" description="A stat
      generator to help you create a character on the free role-playing
-     game Multi Users in Middle Earth (MUME).">
-  </ModulePrefs>
-  <Content type="html">
+     game Multi Users in Middle Earth (MUME)."/>
+	 <Content type="html">
     <![CDATA[
 
-    <script type="text/javascript"
-	    src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
-
+    <script type="text/javascript" src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
+	
+	Jahara's MUME Page
+	
     <!-- Introduction -->
     <div style="width:400px; padding:0px 10px; font-size:10px;">
       Due to popular demand another stat column has been added enabeling
       people to compare two different sets of stats. This, together with the
       field <i>Reroll Calc</i>, makes it possible to see how you can change
-      your stats after a Partial reroll.<p>
-	<u>Stat data can be entered in a couple ways:</u></p>
+      your stats after a Partial reroll.
+	  <p><u>Stat data can be entered in a couple ways:</u></p>
       <ol>
 	<li>
 	  Enter your stats using the
@@ -821,6 +821,7 @@
     </div>
     <!-- MAIN PAGE END HERE -->
 
+	EOF
     ]]>
   </Content>
 </Module>
