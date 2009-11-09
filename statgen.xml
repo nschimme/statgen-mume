@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
+<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="Jahara's MUME Stat Generator"
      title_url="http://sites.google.com/site/jaharamume/"
@@ -7,13 +7,13 @@
      game Multi Users in Middle Earth (MUME).">
   </ModulePrefs>
   <Content type="html">
-    <![CDATA[ 
+    <![CDATA[
 
     <script type="text/javascript"
 	    src="http://statgen-mume.googlecode.com/svn/trunk/statgen.js"/>
 
     <!-- Introduction -->
-    <div style="width:400px; padding:0px 10px; font-size:10px; display:block;">
+    <div style="width:400px; padding:0px 10px; font-size:10px;">
       Due to popular demand another stat column has been added enabeling
       people to compare two different sets of stats. This, together with the
       field <i>Reroll Calc</i>, makes it possible to see how you can change
@@ -43,9 +43,9 @@
       <p><i>Tip</i>: Hovering your cursor over a certain skill will reveal
 	its required stats.</p>
     </div>
-    
+
     <!--Stat Generator-->
-    <div style="width:550px; float:left; padding:10px 10px; font-size:10px;">
+    <div style="width:525px; float:left; padding:10px 10px; font-size:10px;">
       <form name=statForm>
         <table border=0 cellpadding=0 cellspacing=0 align= center>
           <tbody>
@@ -257,10 +257,10 @@
             </tr>
           </tbody>
         </table>
-	
-	
-	<p style="padding: 10px;"/>
-	
+
+
+	<p/><p/>
+
         <table bgcolor="#000000" border=0 cellspacing=0 cellpadding=0 width=225 align="center">
           <tr>
             <td><table border=0 cellspacing=2 cellpadding=0 width=225>
@@ -297,10 +297,11 @@
         </table>
       </form>
     </div>
-    
-    
-    <div style="float:left; font-size:10px;"><!-- added by frn -->
-      <form name="frn">
+
+
+	<!-- added by frn -->
+    <div style="font-size:10px;">
+      <form name="frn">	
         <table cellspacing="3" width="580" border="0" dwcopytype="CopyTableColumn">
           <tbody>
             <tr>
@@ -311,9 +312,9 @@
                     <option value="newTmpStats">Reroll Calc</option>
                   </select>
               </font></td>
-              <td colspan="2"><font  size="1"><b>Info:</b> This table shows 
-                  the theoretical practice percentages a character would get 
-                  being a<i> pure class </i>and having max practices in that 
+              <td colspan="2"><font  size="1"><b>Info:</b> This table shows
+                  the theoretical practice percentages a character would get
+                  being a<i> pure class </i>and having max practices in that
                   skill at legend level</font></td>
               <!-- -->
             </tr>
@@ -356,7 +357,7 @@
                       <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td width="108" align="center"><b title="DEX INT">First 
+                      <td width="108" align="center"><b title="DEX INT">First
                           Aid</b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="first"/>                                </td>
                       <td bgcolor=#000000 width="2" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
@@ -546,37 +547,37 @@
                     </tr>
                     <tr>
                       <td bgcolor=#000000 rowspan=27 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
-                      <td bgcolor="#cccccc" width="109" align="center"><b title="PER INT WIS">Detect 
+                      <td bgcolor="#cccccc" width="109" align="center"><b title="PER INT WIS">Detect
                           Magic </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="detectmagic"/>                              </td>
                       <td width="2" bgcolor="#000000" align="center"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td bgcolor="#eeeeee" width="109" align="center"><b title="PER INT WIS">Burning 
+                      <td bgcolor="#eeeeee" width="109" align="center"><b title="PER INT WIS">Burning
                           Hands </b></td>
                       <td bgcolor=#eeeeee width="40"><input size="5" name="burninghands"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Shocking 
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Shocking
                           Grasp </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="burninghands2"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td width="109" align="center"><b title="PER INT WIS">Detect 
+                      <td width="109" align="center"><b title="PER INT WIS">Detect
                           Invisibility </b></td>
                       <td width="40"><input size="5" name="burninghands3"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Lightning 
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Lightning
                           Bolt </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="lightningbolt"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td width="109" align="center"><b title="PER INT WIS">Colour 
+                      <td width="109" align="center"><b title="PER INT WIS">Colour
                           Spray </b></td>
                       <td width="40"><input size="5" name="lightningbolt2"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
@@ -592,7 +593,7 @@
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Call 
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="PER INT WIS">Call
                           Lighting </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="calllightning"/>                              </td>
                       <td bgcolor=#000000 width="2" align="center"></td>
@@ -603,19 +604,19 @@
                       <td bgcolor=#000000 width="2" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS WIL">Locate 
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS WIL">Locate
                           Life </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="locate2"/>                              </td>
                       <td align=left width="2" bgcolor="#000000"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td width="109" align="center"><b title="INT WIS WIL">Control 
+                      <td width="109" align="center"><b title="INT WIS WIL">Control
                           Weather </b></td>
                       <td width="40"><input size="5" name="locate3"/>                              </td>
                       <td width="2" bgcolor="#000000" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Create 
+                      <td bgcolor="#CCCCCC" width="109" align="center"><b title="INT WIS">Create
                           Light </b></td>
                       <td width="40" bgcolor="#CCCCCC"><input size="5" name="createlight"/>                              </td>
                       <td width="2" bgcolor="#000000" align="center"></td>
@@ -651,7 +652,7 @@
                       <td width="2" bgcolor="#000000" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td width="109" align="center"><b title="INT WIL">Block 
+                      <td width="109" align="center"><b title="INT WIL">Block
                           Door </b></td>
                       <td width="40"><input size="5" name="blockdoor"/>                              </td>
                       <td width="2" bgcolor="#000000" align="center"></td>
@@ -662,7 +663,7 @@
                       <td width="2" bgcolor="#000000" align="center"></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td width="109" align="center"><b title="INT WIL">Dispel 
+                      <td width="109" align="center"><b title="INT WIL">Dispel
                           Magic </b></td>
                       <td width="40"><input size="5" name="dispelmagic"/>                              </td>
                       <td width="2" bgcolor="#000000" align="center"></td>
@@ -700,33 +701,33 @@
                     </tr>
                     <tr>
                       <td bgcolor=#000000 rowspan=23 width="2" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
-                      <td bgcolor="#cccccc" align="center" colspan="2"><b title="INT WIS">Cure 
+                      <td bgcolor="#cccccc" align="center" colspan="2"><b title="INT WIS">Cure
                           Light </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="curelight"/>                              </td>
                       <td bgcolor=#000000 width="2" rowspan="43" align="middle"><img border=0 height=2 src="http://statgen-mume.googlecode.com/svn/trunk/pix.gif" width=2/></td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                      <td align="center" colspan="2"><b title="INT WIS">Cure
                           Serious </b></td>
                       <td width="40"><input size="5" name="cure"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                      <td align="center" colspan="2"><b title="INT WIS">Cure
                           Blindness </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="cure2"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td align="center" colspan="2"><b title="INT WIS">Cure 
+                      <td align="center" colspan="2"><b title="INT WIS">Cure
                           Critic</b></td>
                       <td width="40"><input size="5" name="cure3"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Remove 
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Remove
                           Poison</b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="cure4"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td align="center" colspan="2"><b title="WIS WIL">Remove 
+                      <td align="center" colspan="2"><b title="WIS WIL">Remove
                           Curse </b></td>
                       <td width="40"><input size="5" name="cure5"/>                              </td>
                     </tr>
@@ -743,12 +744,12 @@
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="sanctuary"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td align="center" colspan="2"><b title="INT WIS">Create 
+                      <td align="center" colspan="2"><b title="INT WIS">Create
                           Food</b></td>
                       <td width="40"><input size="5" name="create"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#cccccc>
-                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Create 
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS">Create
                           Water </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="create2"/>                              </td>
                     </tr>
@@ -765,7 +766,7 @@
                       <td width="40"><input size="5" name="bless"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS WIL">Sense 
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="INT WIS WIL">Sense
                           Life </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="senselife"/>                              </td>
                     </tr>
@@ -778,12 +779,12 @@
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="removecurse"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td align="center" colspan="2"><b title="WIS WIL">Break 
+                      <td align="center" colspan="2"><b title="WIS WIL">Break
                           Door </b></td>
                       <td width="40"><input size="5" name="removecurse2"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Dispel 
+                      <td bgcolor="#CCCCCC" align="center" colspan="2"><b title="WIS WIL">Dispel
                           Evil </b></td>
                       <td bgcolor=#CCCCCC width="40"><input size="5" name="dispelevil"/>                              </td>
                     </tr>
@@ -800,7 +801,7 @@
                       <td width="40"><input size="5" name="transfer"/>                              </td>
                     </tr>
                     <tr align=middle bgcolor=#eeeeee>
-                      <td bgcolor="#CCCCCC" width="96" align="center"><b title="WIS WIL">Word 
+                      <td bgcolor="#CCCCCC" width="96" align="center"><b title="WIS WIL">Word
                           of Recall</b></td>
                       <td bgcolor="#CCCCCC" width="2" align="center"></td>
                       <td bgcolor="#CCCCCC" width="40"><input size="5" name="transfer2"/>                              </td>
